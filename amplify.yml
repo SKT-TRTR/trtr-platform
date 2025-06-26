@@ -8,7 +8,7 @@ applications:
             - npm ci
         build:
           commands:
-            - npm run build
+            - npx vite build && npx esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist
       artifacts:
         baseDirectory: dist/public
         files:
